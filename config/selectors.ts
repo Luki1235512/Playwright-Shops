@@ -6,8 +6,7 @@ export interface MarketSelectors {
     closeButton: string;
   };
   header: {
-    infoBannerIcon: string;
-    shopMenuItem: string;
+    shopNavigationLink: string;
   };
   product: {
     ploomXAdvanced: string;
@@ -15,14 +14,15 @@ export interface MarketSelectors {
     title: string;
     price: string;
     description: string;
+    allVariantLinks: string;
+    images: string;
   };
   cart: {
-    checkoutButton: string;
-    header: string;
-    loginButton: string;
-    cartItem: string;
-    removeButton: string;
-    removeSubmitButton: string;
+    proceedToCheckoutButton: string;
+    itemsCounter: string;
+    itemName: string;
+    removeItemButton: string;
+    confirmRemovalButton: string;
     emptyCartMessage: string;
   };
 }
@@ -37,8 +37,7 @@ export const MARKET_SELECTORS: Record<string, MarketSelectors> = {
         "(//div[@class='modal__mainContent']//span[@data-testid='customButton'])[1]",
     },
     header: {
-      infoBannerIcon: "//button[@data-testid='infoBannerIcon']",
-      shopMenuItem: "//a[@data-testid='headerItem-0']",
+      shopNavigationLink: "//a[@data-testid='headerItem-0']",
     },
     product: {
       ploomXAdvanced: "//div[@data-sku='ploom-x-advanced']",
@@ -46,15 +45,18 @@ export const MARKET_SELECTORS: Record<string, MarketSelectors> = {
       title: "//h1",
       price: "//span[@data-testid='productPrice']",
       description: "//div[@data-testid='productDescription']",
+      allVariantLinks: "//div[@data-testid='all_skus']//a",
+      images: "//div[@data-components='Image']//img",
     },
     cart: {
-      checkoutButton: "//button[@data-testid='miniCartCheckoutButton']",
-      header: "//button[@data-testid='cartIcon']//span",
-      loginButton: "//button[@data-testid='loginCheckoutButton']",
-      cartItem: "//div[@data-testid='item']//strong",
-      removeButton:
+      proceedToCheckoutButton:
+        "//button[@data-testid='miniCartCheckoutButton']",
+      itemsCounter: "//button[@data-testid='cartIcon']//span",
+      itemName: "//div[@data-testid='item']//strong",
+      removeItemButton:
         "//div[@data-testid='regular-cart-list']//button[@data-testid='cartRemoveButton']",
-      removeSubmitButton: "//button[@data-testid='remove-item-submit-button']",
+      confirmRemovalButton:
+        "//button[@data-testid='remove-item-submit-button']",
       emptyCartMessage:
         "//div[@id='one-page-checkout']//div[@data-testid='emptyCartContainer']",
     },
@@ -67,8 +69,7 @@ export const MARKET_SELECTORS: Record<string, MarketSelectors> = {
       closeButton: "//button[@data-testid='confirm-button']",
     },
     header: {
-      infoBannerIcon: "//button[@data-testid='infoBannerIcon']",
-      shopMenuItem: "(//ul)[1]//li[2]",
+      shopNavigationLink: "(//ul)[1]//li[2]",
     },
     product: {
       ploomXAdvanced: "//div[@data-sku='16355381']",
@@ -76,15 +77,18 @@ export const MARKET_SELECTORS: Record<string, MarketSelectors> = {
       title: "//h1",
       price: "//span[@data-testid='productPrice']",
       description: "//div[@data-testid='productDescription']",
+      allVariantLinks: "//div[@data-testid='all_skus']//a",
+      images: "//div[@data-components='Image']//img",
     },
     cart: {
-      checkoutButton: "//button[@data-testid='miniCartCheckoutButton']",
-      header: "//button[@data-testid='cartIcon']//span",
-      loginButton: "//button[@data-testid='loginCheckoutButton']",
-      cartItem: "//div[@data-testid='item']//strong",
-      removeButton:
+      proceedToCheckoutButton:
+        "//button[@data-testid='miniCartCheckoutButton']",
+      itemsCounter: "//button[@data-testid='cartIcon']//span",
+      itemName: "//div[@data-testid='item']//strong",
+      removeItemButton:
         "//div[@data-testid='regular-cart-list']//button[@data-testid='cartRemoveButton']",
-      removeSubmitButton: "//button[@data-testid='remove-item-submit-button']",
+      confirmRemovalButton:
+        "//button[@data-testid='remove-item-submit-button']",
       emptyCartMessage:
         "//div[@id='aem-checkout']//div[@data-testid='emptyCartContainer']",
     },
